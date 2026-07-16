@@ -1,0 +1,154 @@
+/* ==========================================================================
+   1. RESET Y CONFIGURACIÓN GLOBAL (Sin Scroll Horizontal)
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box; /* Evita que el padding sume ancho al elemento */
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Bloquea cualquier amago de scroll horizontal */
+}
+
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 8px; /* Margen homogéneo en los bordes de la pantalla */
+  gap: 8px;     /* Separación vertical idéntica entre todos los bloques */
+}
+
+/* ==========================================================================
+   2. ESTRUCTURA FIJA DE 2 COLUMNAS (Fija para Móvil y Escritorio)
+   ========================================================================== */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 7fr 3fr; /* SIEMPRE se mantiene en 2 columnas */
+  width: 100%;
+  column-gap: 8px; /* Separación horizontal limpia entre bloques */
+}
+
+/* Fuerza al contenedor de contenido a estirarse y eliminar el hueco blanco */
+.content-group {
+  flex-grow: 0.5; 
+}
+
+/* ==========================================================================
+   3. ESTILOS DE COMPONENTES
+   ========================================================================== */
+
+/* Header: Oculto en móvil por defecto */
+.main-header {
+  display: none;
+}
+
+/* Navegación */
+.nav-main {
+  background-color: #fb923c;
+  padding: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-date-wrapper {
+  background-color: #86efac;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-input {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 4px;
+  font-size: 0.5rem;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  width: 80%; /* Se adapta al ancho de su columna de 3fr */
+  max-width: 100%; 
+}
+
+/* Contenido Principal */
+.main-content {
+  background-color: #fee2e2;
+  text-align: left;
+  padding: 8px;
+  color: #111827;
+  font-size: 0.7rem;
+}
+
+/* Lateral (Aside) */
+.sidebar {
+  background-color: #dbeafe;
+  color: #3b82f6;
+  font-weight: bold;
+  padding: 32px; /* Padding alto inicial que se ajustará en escritorio */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+/* Texto exclusivo de móvil */
+.mobile-only-text {
+  display: block;
+  background-color: #ffffff;
+  text-align: left;
+  padding: 8px;
+  color: #111827;
+  font-size: 0.7rem;
+  line-height: 1.625;
+}
+
+/* Footer */
+.main-footer {
+  background-color: #c084fc;
+  color: #000000;
+  font-weight: bold;
+  padding: 8px;
+}
+
+/* ==========================================================================
+   4. CAMBIOS EXCLUSIVOS PARA ESCRITORIO (>= 768px)
+   ========================================================================== */
+@media (min-width: 768px) {
+  
+  /* El Header aparece */
+  .main-header {
+    display: block;
+    background-color: #ef4444;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px;
+  }
+
+  /* El input de fecha crece proporcionalmente */
+  .date-input {
+    font-size: 1rem;
+  }
+
+  /* El texto principal aumenta su tamaño */
+  .main-content {
+    font-size: 1.1rem;
+  }
+
+  /* El padding del Aside se reduce para encajar estéticamente en escritorio */
+  .sidebar {
+    padding: 8px;
+  }
+
+  /* El texto inferior se oculta por completo */
+  .mobile-only-text {
+    display: none;
+  }
+}
