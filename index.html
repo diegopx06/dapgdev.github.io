@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- NAVBAR UNIFICADA -->
+  <!-- NAVBAR RESPONSIVE OPTIMIZADA -->
   <header class="navbar">
     <div class="logo">
       <a href="index.html">
@@ -17,20 +17,33 @@
       </a>
     </div>
     
-    <!-- Menú de Navegación (Soporta estado responsive) -->
+    <!-- MENÚ DESPLEGABLE (Contiene enlaces + acciones en celular) -->
     <nav id="nav-menu">
       <ul class="nav-links">
         <li><a class="active" href="index.html" data-i18n="nav_inicio">Inicio</a></li> 
         <li><a href="#comunidad" data-i18n="nav_comunidad">Comunidad</a></li> 
         <li><a href="facultades.html" data-i18n="nav_carreras">Carreras</a></li>
       </ul>
+
+      <!-- Elementos que se mudan al desplegable en pantallas pequeñas -->
+      <div class="acciones-menu-mobile">
+        <div class="selector-idioma">
+          <span class="icono-globo">🌐</span>
+          <select id="select-idioma-mobile" class="combo-idioma" aria-label="Seleccionar Idioma">
+            <option value="es">ES (Español)</option>
+            <option value="en">EN (English)</option>
+            <option value="qu">QU (Quechua)</option>
+          </select>
+        </div>
+        <a href="login.html" class="boton-comenzar btn-bloque" data-i18n="btn_ingresar">Ingresar</a>
+      </div>
     </nav>
     
-    <!-- ACCIONES DE CABECERA -->
+    <!-- ACCIONES DE BARRA FIJA SUPERIOR -->
     <div class="acciones-navbar">
       
-      <!-- Selector de Idioma (Guiño a CIDUNT: Español, Inglés, Quechua) -->
-      <div class="selector-idioma">
+      <!-- Selector de Idioma (Solo visible en Escritorio) -->
+      <div class="selector-idioma selector-desktop">
         <span class="icono-globo">🌐</span>
         <select id="select-idioma" class="combo-idioma" aria-label="Seleccionar Idioma">
           <option value="es">ES</option>
@@ -39,15 +52,15 @@
         </select>
       </div>
 
-      <!-- Botón de Tema -->
+      <!-- Botón de Tema (Siempre visible) -->
       <button id="btn-tema" class="btn-tema-icono" aria-label="Cambiar tema">☀️</button>
       
-      <div class="separador-vertical"></div>
+      <div class="separador-vertical separador-desktop"></div>
       
-      <!-- Botón Acceso -->
-      <a href="login.html" class="btn-acceso-nav" data-i18n="btn_ingresar">Ingresar</a>
+      <!-- Botón Acceso (Solo visible en Escritorio) -->
+      <a href="login.html" class="btn-acceso-nav btn-desktop" data-i18n="btn_ingresar">Ingresar</a>
 
-      <!-- Botón Menú Hamburguesa (Móviles) -->
+      <!-- Botón Menú Hamburguesa -->
       <button class="menu-hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú">
         <span></span>
         <span></span>
@@ -330,6 +343,26 @@
 
     function noDisponible() {
       alert("Esta opción aún no está disponible.");
+    }
+    // Función unificada para aplicar el cambio de idioma
+    function cambiarIdioma(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (traducciones[lang] && traducciones[lang][key]) {
+          element.textContent = traducciones[lang][key];
+        }
+      });
+    }
+
+    // Escuchadores para ambas versiones del combo (Desktop y Mobile)
+    const selectDesktop = document.getElementById('select-idioma');
+    const selectMobile = document.getElementById('select-idioma-mobile');
+
+    if (selectDesktop) {
+      selectDesktop.addEventListener('change', (e) => cambiarIdioma(e.target.value));
+    }
+    if (selectMobile) {
+      selectMobile.addEventListener('change', (e) => cambiarIdioma(e.target.value));
     }
   </script>
 </body>
