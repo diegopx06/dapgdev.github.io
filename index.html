@@ -1,38 +1,336 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="estilo.css" />
-  </head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus UNT | Plataforma Académica</title>
+  <link rel="stylesheet" href="estilos-css/estilo.css">
+</head>
+<body>
 
-  <body>
-    <header class="main-header">HEADER</header>
-
-    <div class="grid-layout nav-group">
-      <nav class="nav-main">NAV</nav>
-      <nav class="nav-date-wrapper">
-        <input class="date-input" type="date" />
-      </nav>
+  <!-- NAVBAR UNIFICADA -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/logop.png" alt="Logotipo Nexus in UNT" class="logo-img">
+        <span class="logo-text"><span>Nex</span><span>U</span>s</span>
+      </a>
     </div>
+    
+    <!-- Menú de Navegación (Soporta estado responsive) -->
+    <nav id="nav-menu">
+      <ul class="nav-links">
+        <li><a class="active" href="index.html" data-i18n="nav_inicio">Inicio</a></li> 
+        <li><a href="#comunidad" data-i18n="nav_comunidad">Comunidad</a></li> 
+        <li><a href="facultades.html" data-i18n="nav_carreras">Carreras</a></li>
+      </ul>
+    </nav>
+    
+    <!-- ACCIONES DE CABECERA -->
+    <div class="acciones-navbar">
+      
+      <!-- Selector de Idioma (Guiño a CIDUNT: Español, Inglés, Quechua) -->
+      <div class="selector-idioma">
+        <span class="icono-globo">🌐</span>
+        <select id="select-idioma" class="combo-idioma" aria-label="Seleccionar Idioma">
+          <option value="es">ES</option>
+          <option value="en">EN</option>
+          <option value="qu">QU</option>
+        </select>
+      </div>
 
-    <div class="grid-layout content-group">
-      <section class="main-content">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam
-        dolores nostrum minima fugiat debitis culpa asperiores perspiciatis,
-        inventore laboriosam error nulla eveniet molestias, iste iure rem quia
-        aliquam in ratione?
-      </section>
-      <aside class="sidebar">aside</aside>
+      <!-- Botón de Tema -->
+      <button id="btn-tema" class="btn-tema-icono" aria-label="Cambiar tema">☀️</button>
+      
+      <div class="separador-vertical"></div>
+      
+      <!-- Botón Acceso -->
+      <a href="login.html" class="btn-acceso-nav" data-i18n="btn_ingresar">Ingresar</a>
+
+      <!-- Botón Menú Hamburguesa (Móviles) -->
+      <button class="menu-hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
     </div>
+  </header>
 
-    <div class="mobile-only-text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis velit id
-      exercitationem, eum nemo nam quo officia, illum atque animi accusamus ex
-      itaque consectetur mollitia repellendus cumque vero assumenda. Totam.
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero"> 
+      <div class="hero-content">
+        <h1><span data-i18n="hero_subtitulo">Encuentra tu</span> <span data-i18n="hero_titulo">PROPÓSITO</span></h1>
+        <p>
+          <span data-i18n="hero_desc">Especialízate, refuerza tus conocimientos y descubre la aplicación real de las matemáticas, la física y la programación.</span>
+          <strong data-i18n="hero_slogan">CAMINA HACIA EL FUTURO.</strong>
+        </p>
+        <div class="hero-actions">
+          <a href="login.html" class="boton-comenzar" data-i18n="btn_unirse">Unirse a Nexus</a>
+          <a href="#descubre" class="btn-secundario" data-i18n="btn_saber_mas">Saber más ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN INFORMATIVA -->
+    <section id="descubre" class="seccion-info">
+      <div class="contenedor-texto-centrado">
+        <h2><span data-i18n="info_titulo_1">No estudies para aprobar, estudia para</span> <span>construir</span></h2>
+        <p data-i18n="info_desc">
+          Muchos estudiantes se estancan memorizando sintaxis sin entender el diseño arquitectónico de software, o resuelven ecuaciones sin visualizar su impacto real en la tecnología moderna. Nexus cierra esa brecha conectando las bases académicas con la ingeniería del mundo profesional.
+        </p>
+      </div>
+    </section>
+
+    <!-- RUTA EN 3 PASOS -->
+    <section class="seccion-pasos">
+      <h2 data-i18n="pasos_titulo">Tu ruta en 3 pasos</h2>
+      <div class="contenedor-grid">
+        <article class="tarjeta-paso">
+          <div class="numero-paso">1</div>
+          <h3 data-i18n="paso1_tit">Identifica tu Carrera</h3>
+          <p data-i18n="paso1_desc">Accede a la malla curricular estructurada de tu facultad y selecciona el curso donde necesitas claridad.</p>
+        </article>
+        <article class="tarjeta-paso">
+          <div class="numero-paso">2</div>
+          <h3 data-i18n="paso2_tit">Explora el "Por Qué"</h3>
+          <p data-i18n="paso2_desc">Descubre roadmaps visuales que conectan la teoría pura con paradigmas modernos de desarrollo e ingeniería.</p>
+        </article>
+        <article class="tarjeta-paso">
+          <div class="numero-paso">3</div>
+          <h3 data-i18n="paso3_tit">Accede a Recursos</h3>
+          <p data-i18n="paso3_desc">Consume PDFs filtrados, repositorios y videos curados específicamente para tu nivel académico.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PREVIEW COMUNIDAD -->
+    <section id="comunidad" class="seccion-comunidad-preview">
+      <div class="contenedor-texto-centrado">
+        <h2><span data-i18n="comunidad_tit">La fuerza de Nexus está en su</span> <span>comunidad</span></h2>
+        <p data-i18n="comunidad_desc">
+          No estás solo en tu ciclo académico. Cientos de estudiantes de Ingeniería de Sistemas comparten recursos, resuelven errores de código en tiempo récord y simplifican las guías de laboratorio más complejas de la UNT.
+        </p>
+      </div>
+
+      <!-- Métricas -->
+      <div class="metricas-comunidad">
+        <div class="metrica-item">
+          <h3>+500</h3>
+          <p data-i18n="metrica_1">Dudas Resueltas entre Pares</p>
+        </div>
+        <div class="metrica-item">
+          <h3>120+</h3>
+          <p data-i18n="metrica_2">Separatas y PDFs Compartidos</p>
+        </div>
+        <div class="metrica-item">
+          <h3>Sistemas</h3>
+          <p data-i18n="metrica_3">Carrera con Mayor Actividad</p>
+        </div>
+      </div>
+
+      <!-- Hilos Muestra -->
+      <div class="contenedor-grid">
+        <article class="tarjeta-hilo-preview">
+          <div class="header-hilo">
+            <span class="badge-tema-comunidad">General UNT</span>
+            <span class="estado-hilo resuelto">🟢 Resuelto</span>
+          </div>
+          <h3>¿Cómo solicitar correctamente el correo institucional siendo de primer ciclo?</h3>
+          <p>Un breve paso a paso para agilizar el trámite con la oficina de sistemas de la universidad...</p>
+          <div class="footer-hilo">
+            <span class="interacciones">💬 14 respuestas &bull; 👍 32 agradecimientos</span>
+          </div>
+        </article>
+
+        <article class="tarjeta-hilo-preview hilo-bloqueado-preview">
+          <div class="header-hilo">
+            <span class="badge-tema-comunidad">POO I</span>
+            <span class="estado-hilo cerrado">🔒 Contenido Protegido</span>
+          </div>
+          <h3>Error al leer archivos binarios con DataOutputStream en el Lab 3</h3>
+          <p>El método writeUTF() me duplica ciertos caracteres al momento de persistir las entidades...</p>
+          <div class="capa-bloqueo-hilo">
+            <a href="login.html" class="enlace-bloqueo-comunidad" data-i18n="btn_bloqueo">🔑 Regístrate para ver más</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta-final">
+      <h2 data-i18n="cta_tit">¿Listo para revolucionar tu aprendizaje?</h2>
+      <p data-i18n="cta_desc">Únete a la red académica de ingeniería de la UNT y pasa de la teoría al desarrollo real.</p>
+      <a href="login.html" class="boton-comenzar" data-i18n="btn_crear_cuenta">Crear Cuenta Gratuita</a>
+    </section>
+  </main>
+
+  <!-- FOOTER REDISEÑADO CON REDES SOCIALES -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <p>&copy; 2026 <strong>NexUs</strong> UNT.</p>
+      </div>
+      
+      <ul class="footer-links">
+        <li><a href="facultades.html" data-i18n="nav_carreras">Carreras</a></li>
+        <li><a href="#comunidad" data-i18n="nav_comunidad">Comunidad</a></li>
+        <li><a onclick="noDisponible()" data-i18n="footer_soporte">Soporte</a></li>
+      </ul>
+
+      <!-- Íconos de Redes Sociales (SVG Vectoriales Integrados) -->
+      <div class="footer-redes">
+        <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub Nexus" class="icono-red" title="GitHub Comunidad">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn Nexus" class="icono-red" title="LinkedIn Institucional">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+      </div>
     </div>
+  </footer>
 
-    <footer class="main-footer">FOOTER</footer>
-  </body>
+  <!-- SCRIPT DE CONTROL UNIFICADO (Tema, Hamburguesa, Idiomas) -->
+  <script>
+    // 1. Control del Tema
+    const btnTema = document.getElementById('btn-tema');
+    const body = document.body;
+
+    function cambiarTema() {
+      body.classList.toggle('modo-claro');
+      btnTema.textContent = body.classList.contains('modo-claro') ? '🌙' : '☀️';
+    }
+    btnTema.addEventListener('click', cambiarTema);
+
+    // 2. Control del Menú Hamburguesa (Móvil)
+    const btnHamburguesa = document.getElementById('btn-hamburguesa');
+    const navMenu = document.getElementById('nav-menu');
+
+    btnHamburguesa.addEventListener('click', () => {
+      btnHamburguesa.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Cierra el menú al hacer clic en un enlace en móvil
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        btnHamburguesa.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // 3. Diccionario e Integración de Idiomas (CIDUNT: ES / EN / QU)
+    const traducciones = {
+      es: {
+        nav_inicio: "Inicio",
+        nav_comunidad: "Comunidad",
+        nav_carreras: "Carreras",
+        btn_ingresar: "Ingresar",
+        hero_subtitulo: "Encuentra tu",
+        hero_titulo: "PROPÓSITO",
+        hero_desc: "Especialízate, refuerza tus conocimientos y descubre la aplicación real de las matemáticas, la física y la programación.",
+        hero_slogan: "CAMINA HACIA EL FUTURO.",
+        btn_unirse: "Unirse a Nexus",
+        btn_saber_mas: "Saber más ↓",
+        info_titulo_1: "No estudies para aprobar, estudia para",
+        info_desc: "Muchos estudiantes se estancan memorizando sintaxis sin entender el diseño arquitectónico de software, o resuelven ecuaciones sin visualizar su impacto real en la tecnología moderna. Nexus cierra esa brecha conectando las bases académicas con la ingeniería del mundo profesional.",
+        pasos_titulo: "Tu ruta en 3 pasos",
+        paso1_tit: "Identifica tu Carrera",
+        paso1_desc: "Accede a la malla curricular estructurada de tu facultad y selecciona el curso donde necesitas claridad.",
+        paso2_tit: "Explora el \"Por Qué\"",
+        paso2_desc: "Descubre roadmaps visuales que conectan la teoría pura con paradigmas modernos de desarrollo e ingeniería.",
+        paso3_tit: "Accede a Recursos",
+        paso3_desc: "Consume PDFs filtrados, repositorios y videos curados específicamente para tu nivel académico.",
+        comunidad_tit: "La fuerza de Nexus está en su",
+        comunidad_desc: "No estás solo en tu ciclo académico. Cientos de estudiantes de Ingeniería de Sistemas comparten recursos, resuelven errores de código en tiempo récord y simplifican las guías de laboratorio más complejas de la UNT.",
+        metrica_1: "Dudas Resueltas entre Pares",
+        metrica_2: "Separatas y PDFs Compartidos",
+        metrica_3: "Carrera con Mayor Actividad",
+        btn_bloqueo: "🔑 Regístrate para ver más",
+        cta_tit: "¿Listo para revolucionar tu aprendizaje?",
+        cta_desc: "Únete a la red académica de ingeniería de la UNT y pasa de la teoría al desarrollo real.",
+        btn_crear_cuenta: "Crear Cuenta Gratuita",
+        footer_soporte: "Soporte"
+      },
+      en: {
+        nav_inicio: "Home",
+        nav_comunidad: "Community",
+        nav_carreras: "Majors",
+        btn_ingresar: "Sign In",
+        hero_subtitulo: "Find your",
+        hero_titulo: "PURPOSE",
+        hero_desc: "Specialize, strengthen your knowledge and discover the real application of math, physics, and coding.",
+        hero_slogan: "WALK INTO THE FUTURE.",
+        btn_unirse: "Join Nexus",
+        btn_saber_mas: "Learn More ↓",
+        info_titulo_1: "Don't study just to pass, study to",
+        info_desc: "Many students get stuck memorizing syntax without understanding software architecture, or solving equations without visualizing their real impact on modern tech. Nexus bridges that gap.",
+        pasos_titulo: "Your path in 3 steps",
+        paso1_tit: "Identify your Major",
+        paso1_desc: "Access your faculty's structured curriculum and pick the course where you need clarity.",
+        paso2_tit: "Explore the \"Why\"",
+        paso2_desc: "Discover visual roadmaps connecting pure theory with modern engineering paradigms.",
+        paso3_tit: "Access Resources",
+        paso3_desc: "Consume filtered PDFs, repositories, and videos curated specifically for your academic level.",
+        comunidad_tit: "The strength of Nexus lies in its",
+        comunidad_desc: "You are not alone in your term. Hundreds of Systems Engineering students share resources and solve code bugs in record time.",
+        metrica_1: "Peer Peer Solved Doubts",
+        metrica_2: "PDFs and Guides Shared",
+        metrica_3: "Most Active Department",
+        btn_bloqueo: "🔑 Register to see more",
+        cta_tit: "Ready to revolutionize your learning?",
+        cta_desc: "Join UNT's engineering academic network and move from theory to real development.",
+        btn_crear_cuenta: "Create Free Account",
+        footer_soporte: "Support"
+      },
+      qu: {
+        nav_inicio: "Qallariy",
+        nav_comunidad: "Ayllu",
+        nav_carreras: "Yachaykuna",
+        btn_ingresar: "Yaykuy",
+        hero_subtitulo: "Tariy qampa",
+        hero_titulo: "MUNAYNIYKI",
+        hero_desc: "Yachayniki kallpachay, yupaykunata, fisicata yupaychaytawan llank'aykunata tariy.",
+        hero_slogan: "HAMUQ PACHAMAN PURIKUY.",
+        btn_unirse: "Nexus-man yaykuy",
+        btn_saber_mas: "Aswan yachay ↓",
+        info_titulo_1: "Ama pasaytalla yachaychu, yachay",
+        info_desc: "Achka yachaqkuna qillqayllapi sakikunku. Nexus chanta llapan yachayta tinkuchin kay pachawan.",
+        pasos_titulo: "Ñanniyki 3 thatkipi",
+        paso1_tit: "Yachaynikita riqsiy",
+        paso1_desc: "Facultadnikipa yachayñanninman yaykuy hawa yachayniykita allinchanaykipaq.",
+        paso2_tit: "Tariy Imaraykuchus",
+        paso2_desc: "Musuq puriykunata tariy yachayta tinkuchinapaq musuq tecnologíawan.",
+        paso3_tit: "Yachaykunaman yaykuy",
+        paso3_desc: "PDF qillqakunata, videokunata ima qaway qampa yachayniykipaq.",
+        comunidad_tit: "Nexuspa kallpan kachan kay",
+        comunidad_desc: "Manam sapallaykichu kanki. Achka yachaqkuna yanapanakunku codigokuna allinchanapaq.",
+        metrica_1: "Tapukuykuna Allinchasqa",
+        metrica_2: "Qillqakuna Rakisqa",
+        metrica_3: "Lliwmanta Aswan Ruraq",
+        btn_bloqueo: "🔑 Qillqakuy aswan qawanaykipaq",
+        cta_tit: "Munasqankichu musuqmanta yachayta?",
+        cta_desc: "UNT Ingenería aylluman huñunakuy chiqap llank'ayman rinaykipaq.",
+        btn_crear_cuenta: "Qasilla Cuentata Ruray",
+        footer_soporte: "Yanapay"
+      }
+    };
+
+    const selectIdioma = document.getElementById('select-idioma');
+    selectIdioma.addEventListener('change', (e) => {
+      const lang = e.target.value;
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (traducciones[lang] && traducciones[lang][key]) {
+          element.textContent = traducciones[lang][key];
+        }
+      });
+    });
+
+    function noDisponible() {
+      alert("Esta opción aún no está disponible.");
+    }
+  </script>
+</body>
 </html>
