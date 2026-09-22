@@ -18,7 +18,7 @@ body.modo-claro {
   --bg-color: #f4f6f9;
   --card-bg: #ffffff;
   --navbar-bg: rgba(244, 246, 249, 0.95);
-  --border-color: #d1d5db;
+  --border-color: #e2e8f0;
   --hero-center: #e2e8f0;
   --accent-blue: #0077b6;
   --accent-purple: #7b2cbf;
@@ -637,10 +637,12 @@ body.modo-claro .grupo-input input:focus {
 }
 
 .bloque-acordeon {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 14px; 
   padding: 8px 18px;
   margin: 5px 0;
-  transition: border-color 0.15s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  transition: background-color 0.3s ease, border-color 0.15s ease, box-shadow 0.3s ease, transform 0.15s ease;
 }
 
 /* Esto unicamente hace que se aplique para los elementos que no estan bloqueados o no tienen asignados la clase ciclo-lock */
@@ -763,6 +765,14 @@ body.modo-claro .ciclo-lock {
 .tarjeta-curso h3 { 
   font-size: 1.4rem; 
   margin-top: 5px; 
+}
+
+.icono-area {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  margin: 0 auto 20px auto;
+  display: block;
 }
 
 /* Detalle de los cursos personalizados (reutilizada) */
@@ -1482,3 +1492,125 @@ body.modo-claro .enlace-bloqueo-comunidad {
     text-align: center;
   }
 }
+
+/* ==========================================================================
+   CORRECCIÓN DE JERARQUÍA TIPOGRÁFICA Y MODO CLARO PARA MALLA Y TARJETAS
+   ========================================================================== */
+.texto-normal {
+  color: var(--text-title) !important;
+  font-weight: 700 !important;
+}
+
+.texto-destaque {
+  color: var(--accent-blue) !important;
+  font-weight: 800 !important;
+}
+
+/* Modo claro: Contraste impecable en acordeón, tarjetas, formularios y catálogo */
+body.modo-claro .bloque-acordeon {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+body.modo-claro .cabecera-ciclo {
+  color: #1a202c !important;
+}
+
+body.modo-claro .contenido-ciclo li {
+  color: #334155 !important;
+  border-color: #f1f5f9 !important;
+}
+
+body.modo-claro .contenido-ciclo li:hover {
+  color: #0284c7 !important;
+}
+
+body.modo-claro .tarjeta-curso,
+body.modo-claro .tarjeta-carrera-catalogo,
+body.modo-claro .tarjeta-paso,
+body.modo-claro .tarjeta-hilo-preview {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+}
+
+body.modo-claro .tarjeta-curso h3,
+body.modo-claro .tarjeta-carrera-catalogo h3,
+body.modo-claro .tarjeta-paso h3,
+body.modo-claro .tarjeta-hilo-preview h3 {
+  color: #1a202c !important;
+}
+
+body.modo-claro .tarjeta-curso p,
+body.modo-claro .tarjeta-carrera-catalogo p,
+body.modo-claro .tarjeta-paso p,
+body.modo-claro .tarjeta-hilo-preview p {
+  color: #475569 !important;
+}
+
+body.modo-claro .tarjeta-autenticacion {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+}
+
+body.modo-claro .tarjeta-autenticacion h2 {
+  color: #1a202c !important;
+}
+
+body.modo-claro .tarjeta-autenticacion p,
+body.modo-claro .tarjeta-autenticacion label {
+  color: #475569 !important;
+}
+
+body.modo-claro .tarjeta-autenticacion input {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #1a202c !important;
+}
+
+body.modo-claro .tarjeta-autenticacion input::placeholder {
+  color: #94a3b8 !important;
+}
+
+body.modo-claro .tarjeta-pdf,
+body.modo-claro .tarjeta-video {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03) !important;
+}
+
+body.modo-claro .tarjeta-pdf h4,
+body.modo-claro .tarjeta-video h4 {
+  color: #1a202c !important;
+}
+
+body.modo-claro .tarjeta-pdf p,
+body.modo-claro .tarjeta-video p {
+  color: #475569 !important;
+}
+
+
+/* Adaptación responsive para el panel del Dashboard y las páginas de Detalle */
+@media (max-width: 768px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  
+  .panel-malla-unt {
+    width: 100% !important;
+  }
+
+  .perfil-navbar .usuario-meta {
+    display: none !important;
+  }
+  
+  .perfil-navbar {
+    gap: 12px !important;
+  }
+
+  .contenedor-detalle-curso {
+    padding: 20px 4% !important;
+  }
+}
