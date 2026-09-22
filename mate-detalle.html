@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus UNT | Matemática Aplicada</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="estilos-css/estilo.css">
+  <script src="js/nexus-core.js" defer></script>
+</head>
+
+<body>
+
+  <!-- NAVBAR PRIVADA RESPONSIVE (Sin enlace a Carreras post-login) -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="dashboard.html">
+        <img src="img/logop.png" alt="Logotipo Nexus in UNT" class="logo-img">
+        <span class="logo-text"><span>Nex</span><span>U</span>s</span>
+      </a>
+    </div>
+
+    <!-- MENÚ DESPLEGABLE (Móvil) -->
+    <nav id="nav-menu">
+      <ul class="nav-links">
+        <li><a href="dashboard.html" data-i18n="nav_panel">Mi Panel</a></li>
+        <li><a href="#comunidad" data-construction data-i18n="nav_comunidad">Comunidad</a></li>
+      </ul>
+
+      <div class="acciones-menu-mobile">
+        <div class="selector-idioma">
+          <span class="icono-globo">🌐</span>
+          <select id="select-idioma-mobile" class="combo-idioma" aria-label="Seleccionar Idioma">
+            <option value="es">ES (Español)</option>
+            <option value="en">EN (English)</option>
+            <option value="fr">FR (Français)</option>
+          </select>
+        </div>
+        <a href="index.html" class="boton-comenzar btn-bloque" data-i18n="btn_salir">
+          <span class="icono-flecha">➔</span> Salir
+        </a>
+      </div>
+    </nav>
+
+    <!-- BLOQUE DE CONTROL DEL USUARIO (Escritorio) -->
+    <div class="perfil-navbar">
+      <div class="selector-idioma selector-desktop">
+        <span class="icono-globo">🌐</span>
+        <select id="select-idioma" class="combo-idioma" aria-label="Seleccionar Idioma">
+          <option value="es">ES</option>
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+        </select>
+      </div>
+
+      <button id="btn-tema" class="btn-tema-icono" aria-label="Cambiar tema">☀️</button>
+
+      <div class="separador-vertical selector-desktop"></div>
+
+      <div class="usuario-meta selector-desktop">
+        <div class="usuario-avatar">UNT</div>
+        <div class="usuario-datos">
+          <span class="usuario-rol" data-i18n="rol_estudiante">Estudiante</span>
+          <span class="usuario-carrera" data-i18n="carrera_sistemas">Ing. de Sistemas</span>
+        </div>
+      </div>
+
+      <a href="index.html" class="btn-salir selector-desktop" title="Cerrar Sesión">
+        <span class="icono-flecha">➔</span> <span data-i18n="btn_salir">Salir</span>
+      </a>
+
+      <button class="menu-hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="contenedor-detalle-curso">
+    <div class="navegacion-retorno">
+      <a href="dashboard.html" class="enlace-retorno" data-i18n="btn_volver_panel">&larr; Volver a Mi Panel</a>
+    </div>
+
+    <section class="cabecera-curso-detalle">
+      <div class="badge-categoria" data-i18n="badge_ruta_autodidacta">Ruta Autodidacta</div>
+      <h1>Matemática <span>Aplicada</span></h1>
+      <p class="sumilla-proposito">
+        <strong data-i18n="seccion_el_porque">El Por Qué:</strong> En el aula resolverás integrales y trazarás curvas paramétricas o polares en papel para aprobar Análisis Matemático. Aquí descubrirás cómo esas abstracciones dan vida a motores gráficos, simulaciones físicas, interpolación de datos y optimización de vectores dentro de la Inteligencia Artificial. El código necesita de la matemática para modelar y computar el mundo real.
+      </p>
+    </section>
+
+    <div class="distribucion-recursos">
+
+      <!-- SECCIÓN BIBLIOTECA PDF -->
+      <section class="bloque-recursos-pdf">
+        <h2 data-i18n="biblioteca_pdf_tit">📚 Biblioteca de Recursos (PDF)</h2>
+        <p class="descripcion-bloque" data-i18n="biblioteca_pdf_desc">Documentación base de cálculo conceptual, transformaciones y geometría analítica computacional.</p>
+
+        <div class="grid-recursos-pdf">
+          <article class="tarjeta-pdf">
+            <div class="icono-archivo">📄</div>
+            <div class="info-archivo">
+              <h4>Cálculo Vectorial y Geometría en Computación</h4>
+              <p>Modelado de curvas en el espacio multidimensional y optimización de funciones de costo para algoritmos.</p>
+            </div>
+            <button class="btn-accion-recurso" data-i18n="btn_ver_recurso">Ver</button>
+          </article>
+
+          <article class="tarjeta-pdf">
+            <div class="icono-archivo">📄</div>
+            <div class="info-archivo">
+              <h4>Animación Matemática con Manim y Python</h4>
+              <p>Guía de código para renderizar trayectorias complejas, cálculo de áreas y curvas paramétricas.</p>
+            </div>
+            <button class="btn-accion-recurso" data-i18n="btn_ver_recurso">Ver</button>
+          </article>
+
+          <article class="tarjeta-pdf recurso-vacio">
+            <div class="icono-archivo">📥</div>
+            <div class="info-archivo">
+              <h4>Problemarios de Exámenes Pasados UNT</h4>
+              <p>Recopilación en preparación de prácticas calificadas de Análisis Matemático II.</p>
+            </div>
+            <button class="btn-accion-recurso" disabled data-construction data-i18n="btn_notificarme">🔔 Notificarme</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECCIÓN VIDEOS COMPLEMENTARIOS -->
+      <section class="bloque-recursos-video">
+        <h2 data-i18n="clases_video_tit">🎥 Clases y Videotutoriales Complementarios</h2>
+        <p class="descripcion-bloque" data-i18n="clases_video_desc">Explicaciones visuales de cálculo avanzado y álgebra lineal aplicados al desarrollo de software.</p>
+
+        <div class="grid-recursos-video">
+          <article class="tarjeta-video">
+            <div class="reproductor-falso">
+              <span class="icono-play">▶</span>
+            </div>
+            <div class="info-video">
+              <h4>Visualización de Sólidos de Revolución con Código</h4>
+              <p>Clase práctica usando Python y SymPy para calcular y renderizar volúmenes usando el método de capas.</p>
+            </div>
+          </article>
+
+          <article class="tarjeta-video">
+            <div class="reproductor-falso">
+              <span class="icono-play">▶</span>
+            </div>
+            <div class="info-video">
+              <h4>Álgebra Lineal y Matrices en Machine Learning</h4>
+              <p>Comprende cómo las transformaciones lineales y las matrices de covarianza operan detrás de los modelos de IA.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <p>&copy; 2026 <strong>NexUs</strong> UNT. <span data-i18n="footer_derechos">Todos los derechos reservados.</span></p>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="dashboard.html" data-i18n="nav_panel">Mi Panel</a></li>
+        <li><a href="#comunidad" data-construction data-i18n="nav_comunidad">Comunidad</a></li>
+        <li><a href="#" class="enlace-soporte" data-construction data-i18n="footer_soporte">Soporte</a></li>
+      </ul>
+
+      <div class="footer-redes">
+        <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub Nexus" class="icono-red" title="GitHub Comunidad">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn Nexus" class="icono-red" title="LinkedIn Institucional">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
